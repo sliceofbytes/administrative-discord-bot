@@ -4,10 +4,10 @@ import { CommandDependencies } from "../definitions/dependencies/CommandDependen
 export abstract class DiscordCommand {
   protected readonly dependencies: CommandDependencies;
   protected readonly command: string;
-  protected readonly args: any;
+  protected readonly args: Array<string>;
   protected readonly message: Message;
 
-  public constructor(dependencies: CommandDependencies, command: any, args: Array<string>, message: Message) {
+  public constructor(dependencies: CommandDependencies, command: string, args: Array<string>, message: Message) {
     this.dependencies = dependencies;
     this.command = command;
     this.args = args;

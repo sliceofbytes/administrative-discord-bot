@@ -1,0 +1,19 @@
+name: Test
+
+on:
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+      - name: Install Dependencies
+        run: |
+          npm install
+      - name: Lint
+        run: |
+          npm run lint
