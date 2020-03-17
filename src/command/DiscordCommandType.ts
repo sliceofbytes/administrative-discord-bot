@@ -1,3 +1,4 @@
 export enum DiscordCommandType {
-  QUARANTINE = "quarantine"
+  SUSPEND = "suspend",
+  HELP = "help"
 }

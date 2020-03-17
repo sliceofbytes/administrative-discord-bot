@@ -10,6 +10,4 @@ process.on("SIGINT",async () => {
   await application.stop();
 });
 
-(async () => {
-  await application.start();
-})();
+setImmediate(async () => await application.start());

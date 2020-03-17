@@ -17,7 +17,9 @@ export class Application {
 
   public async start(): Promise<void> {
     await this.postgresDriver.start();
+    console.log("Connected to DB");
     await this.discordService.start();
+    console.log("Connected to Discord");
   }
 
   public async stop(): Promise<void> {
