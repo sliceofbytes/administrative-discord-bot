@@ -1,0 +1,30 @@
+{
+  "name": "@covid19/administrative-discord-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "this service will handle administrative automation on the covid19 discord server",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/COVID19-OSS/administrative-discord-bot.git"
+  },
+  "author": "GUH <contact@covid19.fyi>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/COVID19-OSS/administrative-discord-bot/issues"
+  },
+  "homepage": "https://github.com/COVID19-OSS/administrative-discord-bot#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "discord.js": "^12.0.2",
+    "node-pg-migrate": "^4.2.3",
+    "pg": "^7.18.2"
+  }
+}
