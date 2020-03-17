@@ -16,12 +16,12 @@ export class DiscordCommandListener {
 
   @bind
   private async handleDiscordCommand(message: Message): Promise<void> {
-    if (!message.content!.startsWith(DISCORD_PREFIX!) || message.author!.bot || message.channel.type !== "text") return;
+    if (!message.content.startsWith(DISCORD_PREFIX!) || message.author.bot || message.channel.type !== "text") return;
 
     const args: Array<string> = message.content?.slice(DISCORD_PREFIX!.length).split(" ");
-    const command = args.shift()!.toLowerCase();
+    const command = args.shift()?.toLowerCase();
 
-    const commandExecutor = DiscordCommandRegistry.getCommand(command, args, message, this.dependencies);
+    const commandExecutor = DiscordCommandRegistry.getCommand(command || "", args, message, this.dependencies);
     if (!commandExecutor) return;
 
     const isValid = await commandExecutor.validate();
