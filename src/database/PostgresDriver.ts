@@ -2,7 +2,7 @@ import { Pool, PoolConfig, QueryResult } from "pg";
 
 const { DB_HOST, DB_PORT, DB_USER, DB_PASS, DB_NAME } = process.env;
 
-type AcceptedValues = string | number | boolean | null | Buffer | any;
+type AcceptedValues = string | number | boolean | null | Buffer;
 
 export class PostgresDriver {
 
@@ -26,8 +26,6 @@ export class PostgresDriver {
     let result: QueryResult;
     try {
       result = await client.query(statement, values);
-    } catch (error) {
-      throw error;
     } finally {
       client.release();
     }

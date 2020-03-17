@@ -17,7 +17,7 @@ export class DiscordService {
     return promise;
   }
 
-  public bindListener(handler: (message: Message) => any): void {
+  public bindListener(handler: (message: Message) => Promise<void>): void {
     this.discordInstance.on("message", handler);
   }
 
