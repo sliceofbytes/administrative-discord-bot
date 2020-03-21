@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: administrative-discord-bot
-          image: covid19oss/administrative-discord-bot
+          image: covid19oss/administrative-discord-bot:$TAG
           env:
             - name: DB_HOST
               valueFrom:
